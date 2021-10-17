@@ -50,7 +50,7 @@ class TicTac:
             if example in ([self.__field[i][i] for i in range(F_LEN)],
                            [self.__field[i][F_LEN-1-i] for i in range(F_LEN)]):
                 return True
-            return False
+        return False
 
     def info(self):
         """Method printing field"""
