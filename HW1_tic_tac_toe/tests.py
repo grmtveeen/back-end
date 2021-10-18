@@ -73,3 +73,4 @@ class TestTicTac(unittest.TestCase):
                 self.game.put(arguments[0], arguments[1], arguments[2])
             self.assertTrue(self.game.check('X'))
 
+
