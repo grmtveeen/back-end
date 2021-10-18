@@ -45,7 +45,7 @@ class TicTac:
             for i in range(F_LEN):
                 if self.__field[i] == example:
                     return True
-                if [self.__field[i][j] for j in range(F_LEN)] == example:
+                if [self.__field[j][i] for j in range(F_LEN)] == example:
                     return True
             if example in ([self.__field[i][i] for i in range(F_LEN)],
                            [self.__field[i][F_LEN-1-i] for i in range(F_LEN)]):
