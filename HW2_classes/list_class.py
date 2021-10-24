@@ -20,19 +20,19 @@ class CustomList(list):
         return CustomList([((other[_] if _ < lo else 0) - (self[_] if _ < ls else 0)) for _ in range(max(ls, lo))])
 
     def __lt__(self, other):
-        return True if sum(self) < sum(other) else False
+        return sum(self) < sum(other)
 
     def __le__(self, other):
-        return True if sum(self) <= sum(other) else False
+        return sum(self) <= sum(other)
 
     def __eq__(self, other):
-        return True if sum(self) == sum(other) else False
+        return sum(self) == sum(other)
 
     def __ne__(self, other):
-        return True if sum(self) != sum(other) else False
+        return sum(self) != sum(other)
 
     def __gt__(self, other):
-        return True if sum(self) > sum(other) else False
+        return sum(self) > sum(other)
 
     def __ge__(self, other):
-        return True if sum(self) >= sum(other) else False
+        return sum(self) >= sum(other)
