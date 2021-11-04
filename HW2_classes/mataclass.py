@@ -9,16 +9,11 @@ class CustomMeta(type):
         return super().__new__(cls, class_name, parents, new_attributes)
 
     def __call__(self, *args, **kwargs):
-        # print('meta.__call__')
-        # print(args, kwargs)
         obj = super().__call__(*args, **kwargs)
-        # print(obj)
-        # print(obj.__dict__)
         new_dict = {}
         for name in obj.__dict__:
             new_dict['custom_' + name] = obj.__dict__[name]
         obj.__dict__ = new_dict
-        # print(obj.__dict__)
         return obj
 
 
