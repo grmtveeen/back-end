@@ -1,0 +1,27 @@
+{% extends 'poster/base_poster.html' %}
+{% load static %}
+{% block title %}
+    Фильмы
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top: 10px">
+      <div class="row g-2">
+          {% for movie in movies %}
+            <div class="col-5">
+              <div class="card" style="width: 33.5rem; margin-left: 40px;">
+                  <img src="/{{movie.img}}/" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.title}}</h5>
+                    <p class="card-title"><h6>{{movie.genre.genre}}</h6></p>
+                    <p class="card-title"><h7>{{movie.main_actor.name}}</h7></p>
+                    <a href="{{movie.id}}/" class="btn btn-primary">{{movie.poster.date}}</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+
+
+{% endblock %}
