@@ -4,16 +4,18 @@ from .models import Poster
 from actors.models import Actor
 from genres.models import Genre
 from movies.models import Movie
+from cinemas.models import Cinema
 import json
 
 
-def poster_description(request, post_id):
+def poster_description(request, post_id, date):
     if request.method == 'GET':
         try:
             Movie.objects.get(id=post_id)
         except Movie.DoesNotExist:
             raise Http404
-        return render(request, 'poster/poster_description.html', context={'movie': Movie.objects.get(id=post_id)})
+        return render(request, 'poster/poster_description.html',
+                      context={'posters': Poster.objects.filter(id=post_id)})
     return JsonResponse({'ER': 'You can use only GET for that'}, status=405)
 
 

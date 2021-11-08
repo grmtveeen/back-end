@@ -1,16 +1,15 @@
 from django.db import models
 from actors.models import Actor
 from genres.models import Genre
-from poster.models import Poster
+
 
 class Movie(models.Model):
-    title = models.CharField(max_length=64, verbose_name='Название')
-    main_actor = models.ForeignKey(Actor, null=False, on_delete=models.SET_DEFAULT, default='ERROR, PLS PUT ACTOR',
+    title = models.CharField(max_length=64, verbose_name='Название', null=False)
+    main_actor = models.ForeignKey(Actor, null=False, on_delete=models.SET_DEFAULT, default=0,
                                    verbose_name='Главный актер')
-    genre = models.ForeignKey(Genre, null=False, on_delete=models.SET_DEFAULT, default='ERROR, PLS PUT GENRE',
+    genre = models.ForeignKey(Genre, null=False, on_delete=models.SET_DEFAULT, default=0,
                               verbose_name='Жанр')
-    year = models.IntegerField(verbose_name='Год', default=404)
-    link = models.CharField(max_length=64, verbose_name='Ссылка на трейлер')
-    img = models.CharField(max_length=64, verbose_name='Ссылка на static img')
-    description = models.TextField(verbose_name='Описание фильма')
-    poster = models.ForeignKey(Poster, null=True, on_delete=models.SET_NULL, verbose_name='Расписание сеансов')
+    year = models.IntegerField(verbose_name='Год', default=0, null=False)
+    link = models.CharField(max_length=64, verbose_name='Ссылка на трейлер', null=False)
+    img = models.CharField(max_length=64, verbose_name='Ссылка на static img', null=False)
+    description = models.TextField(verbose_name='Описание фильма', null=False)
