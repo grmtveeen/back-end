@@ -8,13 +8,14 @@
 <header>
     <dir class="box offset-md-2">
         <div class="card" style="width: 53.45rem; height: 50rem;">
-        <iframe width="854" height="480" src={{posters.link}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="854" height="480" src={{movie.link}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="card-body">
-            <h5 class="card-title">{{posters.name}}</h5>
-            <p class="card-text">{{posters.description}}</p>
-            <p class="card-text">Главный актер: {{posters.main_actor}}</p>
-            <p class="card-text">Год: {{posters.year}}</p>
-            <p class="card-text">Время сеанса: {{posters.date}}</p>
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">Жанр: {{movie.genre.genre}}</p>
+            <p class="card-text">{{movie.description}}</p>
+            <p class="card-text">Главный актер: {{movie.main_actor.name}}</p>
+            <p class="card-text">Год: {{movie.year}}</p>
+            <p class="card-text">Время сеанса: {{movie.poster.date}}</p>
             <a href="../" class="btn btn-primary">Вернуться назад</a>
             </div>
         </div>
